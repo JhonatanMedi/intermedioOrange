@@ -1,5 +1,6 @@
 package Orange.Definitions;
 
+import Orange.Pages.AdminPage;
 import Orange.Pages.LoginPage;
 import Orange.Pages.PimPage;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,7 @@ public class DefinitionsSteps {
     private Connection conexion = new Connection();
     private LoginPage loginPage;
     private PimPage pimPage;
+    private AdminPage adminPage;
 
 
     @Given("^open browser$")
@@ -41,6 +43,12 @@ public class DefinitionsSteps {
         this.pimPage = new PimPage(driver);
         this.pimPage.diligenciarEmployee(name, lastName);
 
+    }
+
+    @And("^llegar a agregar un usuario$")
+    public void llegarAddUser(){
+        this.adminPage = new AdminPage(driver);
+        this.adminPage.llegarAddUser();
     }
 
 }
