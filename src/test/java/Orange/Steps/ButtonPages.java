@@ -1,5 +1,6 @@
 package Orange.Steps;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,9 @@ public class ButtonPages {
 
     @FindBy(how = How.ID, using = "menu_admin_viewAdminModule")
     private WebElement btnAdmin;
+
+    @FindBy(how = How.ID, using = "systemUser_userType")
+    private WebElement btnlistUse;
 
     @FindBy(how = How.ID, using = "btnAdd")
     private WebElement btnAdd;
@@ -60,5 +64,10 @@ public class ButtonPages {
 
     public void btnAdd() {
         btnAdd.click();
+    }
+
+    public void btnlistUse(String useRole) {
+        WebElement btnList = driver.findElement(By.xpath("//select//option[text()='"+useRole+"']"));
+        btnList.click();
     }
 }

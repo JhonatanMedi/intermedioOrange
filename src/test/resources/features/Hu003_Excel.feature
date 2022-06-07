@@ -8,7 +8,8 @@ Feature:Manejo de data por medio de excel
     Given open browser
     And diligenciar user <user> y contrasena <pass>
     And llegar a agregar un usuario
+    When Diligenciar el nombre de la hoja <sheetName> y numero de columna <rowNumber>
 
     Examples:
-      | user  | pass     |
-      | Admin | admin123 |
+      | user  | pass     | sheetName   | rowNumber |
+      | Admin | admin123 | RegTestData | 0         |

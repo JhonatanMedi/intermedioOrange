@@ -33,7 +33,8 @@ public class AdminPage {
         buttonPages.btnAdd();
     }
 
-    public void dilligenciarAddUser(String employeeName, String userName, String password, String confirmPassword) {
+    public void dilligenciarAddUser(String useRole,String employeeName, String userName, String password, String confirmPassword) {
+        buttonPages.btnlistUse(useRole);
         txtEmployeeName.sendKeys(employeeName);
         txtUserName.sendKeys(userName);
         txtPassword.sendKeys(password);
