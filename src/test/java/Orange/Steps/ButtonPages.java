@@ -1,5 +1,6 @@
 package Orange.Steps;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,11 +19,20 @@ public class ButtonPages {
     @FindBy(how = How.ID, using = "menu_pim_viewPimModule")
     private WebElement btnPim;
 
-	@FindBy(how = How.ID, using = "menu_pim_addEmployee")
-	private WebElement btnAddEmployee;
+    @FindBy(how = How.ID, using = "menu_pim_addEmployee")
+    private WebElement btnAddEmployee;
 
     @FindBy(how = How.ID, using = "btnSave")
     private WebElement btnSave;
+
+    @FindBy(how = How.ID, using = "menu_admin_viewAdminModule")
+    private WebElement btnAdmin;
+
+    @FindBy(how = How.ID, using = "systemUser_userType")
+    private WebElement btnlistUse;
+
+    @FindBy(how = How.ID, using = "btnAdd")
+    private WebElement btnAdd;
 
     public ButtonPages(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -40,11 +50,24 @@ public class ButtonPages {
         btnPim.click();
     }
 
-    public void btnAddEmployee(){
-		btnAddEmployee.click();
-	}
+    public void btnAddEmployee() {
+        btnAddEmployee.click();
+    }
 
-	public void btnSave(){
+    public void btnSave() {
         btnSave.click();
+    }
+
+    public void btnAdmin() {
+        btnAdmin.click();
+    }
+
+    public void btnAdd() {
+        btnAdd.click();
+    }
+
+    public void btnlistUse(String useRole) {
+        WebElement btnList = driver.findElement(By.xpath("//select//option[text()='"+useRole+"']"));
+        btnList.click();
     }
 }
